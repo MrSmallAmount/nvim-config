@@ -1,0 +1,2 @@
+-- Use this file for configuration that
+-- will be specific to tex-buffers.
