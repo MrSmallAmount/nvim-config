@@ -9,6 +9,7 @@ vim.opt.scrolloff = 20
 vim.opt.splitright = true
 vim.opt.splitbelow = false
 vim.opt.expandtab = true
+vim.opt.signcolumn = "yes:1"
 
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
@@ -23,3 +24,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+vim.keymap.set('n', '<leader>gns', function()
+    local namespaces = vim.api.nvim_get_namespaces()
+
+    for id, ns in pairs(namespaces) do
+        print(id, ns)
+    end
+end)

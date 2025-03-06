@@ -7,6 +7,11 @@ return {
     },
     config = function()
         require('telescope').setup {
+            pickers = {
+                find_files = {
+                    theme = 'ivy',
+                },
+            },
             extensions = {
                 fzf = {}
             },
@@ -29,6 +34,11 @@ return {
         vim.keymap.set("n", "<space>sd", function()
             require('telescope.builtin').find_files({
                 cwd = "/home/wenigwil/Documents"
+            })
+        end)
+        vim.keymap.set("n", "<space>sp", function()
+            require('telescope.builtin').find_files({
+                cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
             })
         end)
     end
