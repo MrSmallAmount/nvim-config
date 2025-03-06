@@ -10,6 +10,12 @@ return {
             extensions = {
                 fzf = {}
             },
+            defaults = {
+                file_ignore_patterns = {
+                    -- Ignoring pdfs to avoid freeze
+                    "%.pdf"
+                },
+            },
         }
         -- This is just for making telescope search faster
         require('telescope').load_extension('fzf')
@@ -18,6 +24,11 @@ return {
         vim.keymap.set("n", "<space>sn", function()
             require('telescope.builtin').find_files({
                 cwd = vim.fn.stdpath('config')
+            })
+        end)
+        vim.keymap.set("n", "<space>sd", function()
+            require('telescope.builtin').find_files({
+                cwd = "/home/wenigwil/Documents"
             })
         end)
     end
