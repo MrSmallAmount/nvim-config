@@ -24,11 +24,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
-
-vim.keymap.set('n', '<leader>gns', function()
-    local namespaces = vim.api.nvim_get_namespaces()
-
-    for id, ns in pairs(namespaces) do
-        print(id, ns)
-    end
-end)

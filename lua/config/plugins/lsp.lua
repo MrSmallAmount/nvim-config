@@ -22,7 +22,7 @@ return {
                         vim.lsp.diagnostic.on_publish_diagnostics, {
                             -- Set the virtual text aligned
                             virtual_text = {
-                                virt_text_win_col = 50,
+                                virt_text_win_col = 55,
                             },
                         }
                     ),
